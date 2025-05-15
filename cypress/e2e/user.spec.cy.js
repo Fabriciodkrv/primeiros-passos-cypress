@@ -23,8 +23,10 @@
   import LoginPage from '../pages/loginPage'
   import DashboardPage from '../pages/dashboarsPage'
   import MenuPage from '../pages/menuPage'
-  import MyInfoPage from '../pages/MyInfoPage' 
+  import MyInfoPage from '../pages/MyInfoPage'
+  const Chance = require('chance') 
 
+  const chance = new Chance()
   const loginPage = new LoginPage()
   const dashboardPage = new DashboardPage()
   const menuPage = new MenuPage()
@@ -38,7 +40,7 @@
         
         dashboardPage.checkDashboardsPage()
         menuPage.accessMyInfo()
-        myInfoPage.fillPersonalDetails('firsName', 'lastName')
+        myInfoPage.fillPersonalDetails(chance.first(), chance.last())
         myInfoPage.fillEmployeeDetails('employeeId', 'otherId','0123456', '2025-05-06')
         myInfoPage.fillStatus()
         myInfoPage.saveForm()
