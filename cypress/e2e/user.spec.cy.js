@@ -37,11 +37,9 @@
         
         loginPage.accessLoginPage()
         loginPage.loginWithUser(userData.userSuccess.username,userData.userSuccess.password)
-        
         dashboardPage.checkDashboardsPage()
         menuPage.accessMyInfo()
         myInfoPage.fillPersonalDetails(chance.first(), chance.last())
-      
         myInfoPage.fillEmployeeDetails('employeeId', 'otherId','0123456', '2025-05-06')
         myInfoPage.fillStatus()
         myInfoPage.saveForm()
